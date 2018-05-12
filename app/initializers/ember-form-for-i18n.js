@@ -7,7 +7,7 @@ export function initialize(app) {
   try {
     i18n = getOwner(app).lookup('service:i18n');
   } catch(e) {
-    i18n = app.__container__.lookup('service:i18n');
+    i18n = app.__container__ && app.__container__.lookup('service:i18n');
   }
 
   if (i18n) {
